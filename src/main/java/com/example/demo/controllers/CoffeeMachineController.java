@@ -30,12 +30,7 @@ public class CoffeeMachineController {
     @Operation(summary = "Приготовить напиток",
                 description = "Приготовит указанный напиток при наличии необходимых ингредиентов")
     public ResponseEntity<String> makeDrink(@RequestParam String drinkName){
-
-        System.out.println("Полученное имя напитка: " + drinkName);
-
         drinkName = decodeDrinkName(drinkName);
-
-        System.out.println("Декодированное имя напитка: " + drinkName);
         return  ResponseEntity.ok(coffeeMachineService.makeDrink(drinkName));
     }
 

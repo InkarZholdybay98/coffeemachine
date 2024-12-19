@@ -51,8 +51,6 @@ public class CoffeeMachineService {
 
     public Drink findDrinkByName(String drinkName){
 
-        System.out.println("Ищем напиток : " + drinkName);
-
         return drinksRepository.findByDrinkName(drinkName)
                 .orElseThrow(()-> new DrinkNotFound("К сожалению , кофемашина не изготавливает данный напиток"));
     }
